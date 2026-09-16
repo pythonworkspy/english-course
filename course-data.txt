@@ -1,0 +1,83 @@
+window.ENGLISH_COURSE_DATA = {
+  courseTitle: "English Course",
+  subtitle: "20–25 dakika • Grammar + Reading + Speaking",
+  days: [
+    {
+      id: "day1",
+      number: 1,
+      title: "Present Simple vs Past Simple",
+      shortTitle: "Present vs Past",
+      status: "available",
+      duration: "20–25 dk",
+      focus: "Grammar • Reading • Speaking",
+      sections: {
+        grammar: {
+          title: "Grammar",
+          intro: "Parantezdeki fiilin doğru hâlini yaz. Kontrol et dediğinde soru tamamlanır ve cihazına kaydedilir.",
+          questions: [
+            {id:"g1", text:"Maya usually ________ the bus to work.", verb:"take", answers:["takes"]},
+            {id:"g2", text:"Yesterday, she ________ home because the weather was nice.", verb:"walk", answers:["walked"]},
+            {id:"g3", text:"Her brother ________ dinner every Friday.", verb:"cook", answers:["cooks"]},
+            {id:"g4", text:"Last Saturday, they ________ a small art exhibition.", verb:"visit", answers:["visited"]},
+            {id:"g5", text:"I normally ________ my phone on silent during meetings.", verb:"keep", answers:["keep"]},
+            {id:"g6", text:"We ________ a new café near the station last week.", verb:"try", answers:["tried"]},
+            {id:"g7", text:"Leo usually ________ at 6:30, but yesterday he ________ at 8:00.", verb:"wake up", answers:["wakes up / woke up","wakes up/woke up","wakes up, woke up"], placeholder:"wakes up / woke up"},
+            {id:"g8", text:"I ________ tea every morning, but yesterday I ________ coffee.", verb:"drink", answers:["drink / drank","drink/drank","drink, drank"], placeholder:"drink / drank"}
+          ]
+        },
+        reading: {
+          title: "Reading",
+          intro: "Metni oku ve soruları İngilizce cevapla. Burada örnek cevap gösterilmez; cevabını kaydedip daha sonra ChatGPT'ye göndereceğiz.",
+          passageTitle: "A Saturday at the Community Garden",
+          passage: [
+            "Nora volunteers at a community garden near her home. She usually goes there on Saturday mornings. She waters the plants, removes weeds, and talks to other volunteers. The garden opens at 9 a.m., but Nora normally arrives fifteen minutes early.",
+            "Last Saturday was different. Nora arrived late because she missed her bus. When she reached the garden, the other volunteers were already working. She helped them plant tomatoes and cleaned some old tools. At noon, everyone stopped for lunch. Nora brought sandwiches from home, and another volunteer shared some fruit. She left the garden at 2 p.m. because she had plans with her family."
+          ],
+          questions: [
+            {id:"r1", text:"When does Nora usually go to the community garden?"},
+            {id:"r2", text:"Why did Nora arrive late last Saturday?"},
+            {id:"r3", text:"What did Nora do when she reached the garden?"},
+            {id:"r4", text:"What did she have for lunch?"},
+            {id:"r5", text:"Why did she leave at 2 p.m.?"},
+            {id:"r6", text:"Write one sentence from the text that describes a routine, and one that describes a finished past event."}
+          ]
+        },
+        speaking: {
+          title: "Speaking",
+          intro: "Speaking bölümünü HTML'de yapmıyoruz. Grammar ve Reading bittikten sonra ChatGPT Voice'a geç.",
+          prompt: "Day 1 speaking bölümüne geçelim. Soruları bana tek tek sor."
+        }
+      }
+    },
+
+    {id:"day2", number:2, title:"Everyday Routines & Habits", shortTitle:"Routines & Habits", status:"upcoming", duration:"20–25 dk", focus:"Vocabulary • Speaking"},
+    {id:"day3", number:3, title:"Present Simple vs Present Continuous", shortTitle:"Present Continuous", status:"upcoming", duration:"20–25 dk", focus:"Grammar • Reading"},
+    {id:"day4", number:4, title:"Past Simple: Questions & Negatives", shortTitle:"Past Questions", status:"upcoming", duration:"20–25 dk", focus:"Grammar • Speaking"},
+    {id:"day5", number:5, title:"Technical English: Instructions & Processes", shortTitle:"Technical Instructions", status:"upcoming", duration:"20–25 dk", focus:"Technical Reading"},
+    {id:"day6", number:6, title:"Reading Strategies: Main Idea & Detail", shortTitle:"Reading Strategies", status:"upcoming", duration:"20–25 dk", focus:"Reading"},
+    {id:"day7", number:7, title:"Week 1 Review", shortTitle:"Weekly Review", status:"upcoming", duration:"25 dk", focus:"Quiz • Review"},
+    {id:"day8", number:8, title:"Present Perfect Basics", shortTitle:"Present Perfect", status:"upcoming", duration:"20–25 dk", focus:"Grammar"},
+    {id:"day9", number:9, title:"Explaining Experience", shortTitle:"Experience", status:"upcoming", duration:"20–25 dk", focus:"Speaking"},
+    {id:"day10", number:10, title:"Technical Vocabulary in Context", shortTitle:"Technical Vocabulary", status:"upcoming", duration:"20–25 dk", focus:"Vocabulary • Reading"},
+    {id:"day11", number:11, title:"Comparatives & Superlatives", shortTitle:"Comparisons", status:"upcoming", duration:"20–25 dk", focus:"Grammar"},
+    {id:"day12", number:12, title:"Describing Problems & Solutions", shortTitle:"Problems & Solutions", status:"upcoming", duration:"20–25 dk", focus:"Speaking • Writing"},
+    {id:"day13", number:13, title:"Listening for Key Information", shortTitle:"Listening Skills", status:"upcoming", duration:"20–25 dk", focus:"Listening"},
+    {id:"day14", number:14, title:"Week 2 Review", shortTitle:"Weekly Review", status:"upcoming", duration:"25 dk", focus:"Quiz • Review"},
+    {id:"day15", number:15, title:"Future Forms: will / going to", shortTitle:"Future Forms", status:"upcoming", duration:"20–25 dk", focus:"Grammar"},
+    {id:"day16", number:16, title:"Interview: Introduce Yourself", shortTitle:"Interview Intro", status:"upcoming", duration:"20–25 dk", focus:"Interview Speaking"},
+    {id:"day17", number:17, title:"Reading Technical Articles", shortTitle:"Technical Articles", status:"upcoming", duration:"20–25 dk", focus:"Technical Reading"},
+    {id:"day18", number:18, title:"Modal Verbs: can / should / must", shortTitle:"Modal Verbs", status:"upcoming", duration:"20–25 dk", focus:"Grammar"},
+    {id:"day19", number:19, title:"Explaining a Project", shortTitle:"Project Explanation", status:"upcoming", duration:"20–25 dk", focus:"Speaking"},
+    {id:"day20", number:20, title:"Professional Email Basics", shortTitle:"Professional Email", status:"upcoming", duration:"20–25 dk", focus:"Writing"},
+    {id:"day21", number:21, title:"Week 3 Review", shortTitle:"Weekly Review", status:"upcoming", duration:"25 dk", focus:"Quiz • Review"},
+    {id:"day22", number:22, title:"Conditionals: Real Situations", shortTitle:"Conditionals", status:"upcoming", duration:"20–25 dk", focus:"Grammar"},
+    {id:"day23", number:23, title:"Interview: Strengths & Examples", shortTitle:"Interview Examples", status:"upcoming", duration:"20–25 dk", focus:"Interview Speaking"},
+    {id:"day24", number:24, title:"Understanding Technical Documentation", shortTitle:"Documentation", status:"upcoming", duration:"20–25 dk", focus:"Technical Reading"},
+    {id:"day25", number:25, title:"Passive Voice in Technical English", shortTitle:"Passive Voice", status:"upcoming", duration:"20–25 dk", focus:"Grammar • Technical"},
+    {id:"day26", number:26, title:"Explaining Data & Results", shortTitle:"Data & Results", status:"upcoming", duration:"20–25 dk", focus:"Speaking • Vocabulary"},
+    {id:"day27", number:27, title:"Listening: Workplace Conversation", shortTitle:"Workplace Listening", status:"upcoming", duration:"20–25 dk", focus:"Listening"},
+    {id:"day28", number:28, title:"Week 4 Review", shortTitle:"Weekly Review", status:"upcoming", duration:"25 dk", focus:"Quiz • Review"},
+    {id:"day29", number:29, title:"Mock Interview", shortTitle:"Mock Interview", status:"upcoming", duration:"25 dk", focus:"Interview Speaking"},
+    {id:"day30", number:30, title:"Final Review & Progress Check", shortTitle:"Final Review", status:"upcoming", duration:"25 dk", focus:"Review • Progress"}
+  ]
+};
