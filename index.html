@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Day 1 Repeat — English Practice</title>
+<style>
+:root{
+  --bg:#f6f7fb; --card:#fff; --text:#1f2937; --muted:#6b7280;
+  --accent:#4f46e5; --ok:#15803d; --bad:#b91c1c; --border:#e5e7eb;
+  --donebg:#f0fdf4; --badbg:#fef2f2;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  background:var(--bg); color:var(--text); line-height:1.5;
+}
+.wrap{max-width:820px;margin:0 auto;padding:18px}
+h1{font-size:1.7rem;margin:8px 0}
+h2{font-size:1.3rem;margin:0 0 12px}
+p{margin:8px 0}
+.sub,.small{color:var(--muted)}
+.card{
+  background:var(--card); border:1px solid var(--border); border-radius:16px;
+  padding:18px; margin:14px 0; box-shadow:0 6px 20px rgba(0,0,0,.04);
+}
+.q{padding:14px;border-bottom:1px solid var(--border);border-radius:10px}
+.q:last-child{border-bottom:0}
+.q.completed-ok{background:var(--donebg)}
+.q.completed-bad{background:var(--badbg)}
+.qhead{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.qnum{font-weight:700}
+.status{
+  font-size:.8rem; font-weight:700; padding:4px 8px; border-radius:999px;
+  background:#f3f4f6; color:#6b7280; white-space:nowrap;
+}
+.status.ok{background:#dcfce7;color:#166534}
+.status.bad{background:#fee2e2;color:#991b1b}
+input,textarea{
+  width:100%; margin-top:9px; padding:12px 13px; border:1px solid #cfd4dc;
+  border-radius:10px; font-size:16px; background:#fff; color:var(--text);
+}
+textarea{min-height:78px;resize:vertical}
+input:disabled,textarea:disabled{opacity:1;background:#f9fafb;color:#374151}
+button{
+  appearance:none; border:0; border-radius:10px; padding:11px 14px;
+  font-size:15px; font-weight:650; cursor:pointer; margin:9px 8px 0 0;
+}
+button:disabled{opacity:.55;cursor:default}
+.primary{background:var(--accent);color:#fff}
+.secondary{background:#eef2ff;color:#3730a3}
+.ghost{background:#f3f4f6;color:#374151}
+.feedback{margin-top:8px;font-weight:600}
+.oktext{color:var(--ok)}
+.badtext{color:var(--bad)}
+.reading{
+  background:#f9fafb; border-left:4px solid var(--accent); padding:14px;
+  border-radius:10px; margin:12px 0 16px;
+}
+.score{font-size:1.05rem;font-weight:700;margin-top:12px}
+.pill{
+  display:inline-block;padding:4px 9px;border-radius:999px;background:#eef2ff;
+  color:#3730a3;font-size:.85rem;font-weight:700;
+}
+.notice{
+  background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;
+  border-radius:12px;padding:12px;margin:12px 0;
+}
+.hidden{display:none!important}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <span class="pill">Day 1 — Repeat v2</span>
+  <h1>Present Simple vs Past Simple</h1>
+  <p class="sub">Grammar ve Reading burada; Speaking'i ChatGPT ile sesli yapacağız.</p>
+
+  <div id="storageNotice" class="notice hidden">
+    Bu görüntüleyici tarayıcı depolamasını desteklemiyor olabilir. Kalıcı kayıt için dosyayı Safari/Chrome ile aç.
+  </div>
+
+  <section class="card">
+    <h2>Part 1 — Grammar</h2>
+    <p class="small">Cevabını yaz ve <b>Kontrol et</b>'e bas. Bastığın anda soru tamamlanır ve kaydedilir.</p>
+
+    <div class="q" id="gq1">
+      <div class="qhead"><div><span class="qnum">1.</span> Maya usually ________ the bus to work. <i>(take)</i></div><span class="status" id="gs1">Bekliyor</span></div>
+      <input id="g1" autocomplete="off">
+      <button type="button" class="secondary check-grammar" data-n="1">Kontrol et</button>
+      <button type="button" class="ghost edit-grammar hidden" data-n="1">Cevabı değiştir</button>
+      <div id="gf1" class="feedback"></div>
+    </div>
+
+    <div class="q" id="gq2">
+      <div class="qhead"><div><span class="qnum">2.</span> Yesterday, she ________ home because the weather was nice. <i>(walk)</i></div><span class="status" id="gs2">Bekliyor</span></div>
+      <input id="g2" autocomplete="off">
+      <button type="button" class="secondary check-grammar" data-n="2">Kontrol et</button>
+      <button type="button" class="ghost edit-grammar hidden" data-n="2">Cevabı değiştir</button>
+      <div id="gf2" class="feedback"></div>
+    </div>
+
+    <div class="q" id="gq3">
+      <div class="qhead"><div><span class="qnum">3.</span> Her brother ________ dinner every Friday. <i>(cook)</i></div><span class="status" id="gs3">Bekliyor</span></div>
+      <input id="g3" autocomplete="off">
+      <button type="button" class="secondary check-grammar" data-n="3">Kontrol et</button>
+      <button type="button" class="ghost edit-grammar hidden" data-n="3">Cevabı değiştir</button>
+      <div id="gf3" class="feedback"></div>
+    </div>
+
+    <div class="q" id="gq4">
+      <div class="qhead"><div><span class="qnum">4.</span> Last Saturday, they ________ a small art exhibition. <i>(visit)</i></div><span class="status" id="gs4">Bekliyor</span></div>
+      <input id="g4" autocomplete="off">
+      <button type="button" class="secondary check-grammar" data-n="4">Kontrol et</button>
+      <button type="button" class="ghost edit-grammar hidden" data-n="4">Cevabı değiştir</button>
+      <div id="gf4" class="feedback"></div>
+    </div>
+
+    <div class="q" id="gq5">
+      <div class="qhead"><div><span class="qnum">5.</span> I normally ________ my phone on silent during meetings. <i>(keep)</i></div><span class="status" id="gs5">Bekliyor</span></div>
+      <input id="g5" autocomplete="off">
+      <button type="button" class="secondary check-grammar" data-n="5">Kontrol et</button>
+      <button type="button" class="ghost edit-grammar hidden" data-n="5">Cevabı değiştir</button>
+      <div id="gf5" class="feedback"></div>
+    </div>
+
+    <div class="q" id="gq6">
+      <div class="qhead"><div><span class="qnum">6.</span> We ________ a new café near the station last week. <i>(try)</i></div><span class="status" id="gs6">Bekliyor</span></div>
+      <input id="g6" autocomplete="off">
+      <button type="button" class="secondary check-grammar" data-n="6">Kontrol et</button>
+      <button type="button" class="ghost edit-grammar hidden" data-n="6">Cevabı değiştir</button>
+      <div id="gf6" class="feedback"></div>
+    </div>
+
+    <div class="q" id="gq7">
+      <div class="qhead"><div><span class="qnum">7.</span> Leo usually ________ at 6:30, but yesterday he ________ at 8:00. <i>(wake up)</i></div><span class="status" id="gs7">Bekliyor</span></div>
+      <input id="g7" placeholder="Örn: wakes up / woke up" autocomplete="off">
+      <button type="button" class="secondary check-grammar" data-n="7">Kontrol et</button>
+      <button type="button" class="ghost edit-grammar hidden" data-n="7">Cevabı değiştir</button>
+      <div id="gf7" class="feedback"></div>
+    </div>
+
+    <div class="q" id="gq8">
+      <div class="qhead"><div><span class="qnum">8.</span> I ________ tea every morning, but yesterday I ________ coffee. <i>(drink)</i></div><span class="status" id="gs8">Bekliyor</span></div>
+      <input id="g8" placeholder="Örn: drink / drank" autocomplete="off">
+      <button type="button" class="secondary check-grammar" data-n="8">Kontrol et</button>
+      <button type="button" class="ghost edit-grammar hidden" data-n="8">Cevabı değiştir</button>
+      <div id="gf8" class="feedback"></div>
+    </div>
+
+    <div id="score" class="score"></div>
+  </section>
+
+  <section class="card">
+    <h2>Part 2 — Reading</h2>
+
+    <div class="reading">
+      <b>A Saturday at the Community Garden</b>
+      <p>Nora volunteers at a community garden near her home. She usually goes there on Saturday mornings. She waters the plants, removes weeds, and talks to other volunteers. The garden opens at 9 a.m., but Nora normally arrives fifteen minutes early.</p>
+      <p>Last Saturday was different. Nora arrived late because she missed her bus. When she reached the garden, the other volunteers were already working. She helped them plant tomatoes and cleaned some old tools. At noon, everyone stopped for lunch. Nora brought sandwiches from home, and another volunteer shared some fruit. She left the garden at 2 p.m. because she had plans with her family.</p>
+    </div>
+
+    <p class="small">Cevabını yaz ve <b>Kaydet ve tamamla</b>'ya bas. Örnek cevap butonu kaldırıldı.</p>
+
+    <div class="q" id="rq1">
+      <div class="qhead"><div><span class="qnum">1.</span> When does Nora usually go to the community garden?</div><span class="status" id="rs1">Bekliyor</span></div>
+      <textarea id="r1"></textarea>
+      <button type="button" class="primary save-reading" data-n="1">Kaydet ve tamamla</button>
+      <button type="button" class="ghost edit-reading hidden" data-n="1">Cevabı değiştir</button>
+    </div>
+
+    <div class="q" id="rq2">
+      <div class="qhead"><div><span class="qnum">2.</span> Why did Nora arrive late last Saturday?</div><span class="status" id="rs2">Bekliyor</span></div>
+      <textarea id="r2"></textarea>
+      <button type="button" class="primary save-reading" data-n="2">Kaydet ve tamamla</button>
+      <button type="button" class="ghost edit-reading hidden" data-n="2">Cevabı değiştir</button>
+    </div>
+
+    <div class="q" id="rq3">
+      <div class="qhead"><div><span class="qnum">3.</span> What did Nora do when she reached the garden?</div><span class="status" id="rs3">Bekliyor</span></div>
+      <textarea id="r3"></textarea>
+      <button type="button" class="primary save-reading" data-n="3">Kaydet ve tamamla</button>
+      <button type="button" class="ghost edit-reading hidden" data-n="3">Cevabı değiştir</button>
+    </div>
+
+    <div class="q" id="rq4">
+      <div class="qhead"><div><span class="qnum">4.</span> What did she have for lunch?</div><span class="status" id="rs4">Bekliyor</span></div>
+      <textarea id="r4"></textarea>
+      <button type="button" class="primary save-reading" data-n="4">Kaydet ve tamamla</button>
+      <button type="button" class="ghost edit-reading hidden" data-n="4">Cevabı değiştir</button>
+    </div>
+
+    <div class="q" id="rq5">
+      <div class="qhead"><div><span class="qnum">5.</span> Why did she leave at 2 p.m.?</div><span class="status" id="rs5">Bekliyor</span></div>
+      <textarea id="r5"></textarea>
+      <button type="button" class="primary save-reading" data-n="5">Kaydet ve tamamla</button>
+      <button type="button" class="ghost edit-reading hidden" data-n="5">Cevabı değiştir</button>
+    </div>
+
+    <div class="q" id="rq6">
+      <div class="qhead"><div><span class="qnum">6.</span> Write one sentence from the text that describes a routine, and one that describes a finished past event.</div><span class="status" id="rs6">Bekliyor</span></div>
+      <textarea id="r6"></textarea>
+      <button type="button" class="primary save-reading" data-n="6">Kaydet ve tamamla</button>
+      <button type="button" class="ghost edit-reading hidden" data-n="6">Cevabı değiştir</button>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Part 3 — Bana gönder</h2>
+    <p class="small">Tamamladığın cevapları tek metin olarak kopyalar.</p>
+    <button type="button" id="copyBtn" class="primary">Sonuçları kopyala</button>
+    <button type="button" id="resetBtn" class="ghost">Tüm ilerlemeyi sıfırla</button>
+    <div id="copymsg" class="feedback"></div>
+  </section>
+</div>
+
+<script>
+(() => {
+  "use strict";
+
+  const KEY = "english_day1_repeat_v2";
+  const grammarAnswers = {
+    1:["takes"], 2:["walked"], 3:["cooks"], 4:["visited"],
+    5:["keep"], 6:["tried"],
+    7:["wakes up / woke up","wakes up/woke up","wakes up, woke up"],
+    8:["drink / drank","drink/drank","drink, drank"]
+  };
+
+  const state = {
+    grammar:{}, reading:{}
+  };
+
+  function norm(s){
+    return (s || "").trim().toLowerCase().replace(/\s+/g," ");
+  }
+
+  function canUseLocalStorage(){
+    try{
+      const t="__test__";
+      localStorage.setItem(t,"1");
+      localStorage.removeItem(t);
+      return true;
+    }catch(e){
+      return false;
+    }
+  }
+
+  const storageOK = canUseLocalStorage();
+  if(!storageOK){
+    document.getElementById("storageNotice").classList.remove("hidden");
+  }
+
+  function save(){
+    if(!storageOK) return;
+    localStorage.setItem(KEY, JSON.stringify(state));
+  }
+
+  function load(){
+    if(!storageOK) return;
+    try{
+      const raw = localStorage.getItem(KEY);
+      if(!raw) return;
+      const parsed = JSON.parse(raw);
+      if(parsed && parsed.grammar) state.grammar = parsed.grammar;
+      if(parsed && parsed.reading) state.reading = parsed.reading;
+    }catch(e){}
+  }
+
+  function setGrammarUI(n){
+    const item = state.grammar[n] || {answer:"", completed:false, correct:null};
+    const input = document.getElementById("g"+n);
+    const q = document.getElementById("gq"+n);
+    const status = document.getElementById("gs"+n);
+    const feedback = document.getElementById("gf"+n);
+    const checkBtn = q.querySelector(".check-grammar");
+    const editBtn = q.querySelector(".edit-grammar");
+
+    input.value = item.answer || "";
+    q.classList.remove("completed-ok","completed-bad");
+    status.className = "status";
+    feedback.className = "feedback";
+
+    if(item.completed){
+      input.disabled = true;
+      checkBtn.classList.add("hidden");
+      editBtn.classList.remove("hidden");
+      if(item.correct){
+        q.classList.add("completed-ok");
+        status.textContent = "Tamamlandı ✓";
+        status.classList.add("ok");
+        feedback.textContent = "Doğru.";
+        feedback.classList.add("oktext");
+      }else{
+        q.classList.add("completed-bad");
+        status.textContent = "Tamamlandı";
+        status.classList.add("bad");
+        feedback.textContent = "Doğru cevap: " + grammarAnswers[n][0];
+        feedback.classList.add("badtext");
+      }
+    }else{
+      input.disabled = false;
+      checkBtn.classList.remove("hidden");
+      editBtn.classList.add("hidden");
+      status.textContent = "Bekliyor";
+      feedback.textContent = "";
+    }
+  }
+
+  function checkGrammar(n){
+    const input = document.getElementById("g"+n);
+    const answer = input.value.trim();
+    if(!answer){
+      const f = document.getElementById("gf"+n);
+      f.textContent = "Önce bir cevap yaz.";
+      f.className = "feedback badtext";
+      return;
+    }
+    const correct = grammarAnswers[n].some(a => norm(a) === norm(answer));
+    state.grammar[n] = {answer, completed:true, correct};
+    save();
+    setGrammarUI(n);
+    updateScore();
+  }
+
+  function editGrammar(n){
+    const old = state.grammar[n] || {};
+    state.grammar[n] = {answer:old.answer || "", completed:false, correct:null};
+    save();
+    setGrammarUI(n);
+    updateScore();
+    setTimeout(()=>document.getElementById("g"+n).focus(), 0);
+  }
+
+  function setReadingUI(n){
+    const item = state.reading[n] || {answer:"", completed:false};
+    const ta = document.getElementById("r"+n);
+    const q = document.getElementById("rq"+n);
+    const status = document.getElementById("rs"+n);
+    const saveBtn = q.querySelector(".save-reading");
+    const editBtn = q.querySelector(".edit-reading");
+
+    ta.value = item.answer || "";
+    q.classList.remove("completed-ok");
+    status.className = "status";
+
+    if(item.completed){
+      ta.disabled = true;
+      saveBtn.classList.add("hidden");
+      editBtn.classList.remove("hidden");
+      q.classList.add("completed-ok");
+      status.textContent = "Tamamlandı ✓";
+      status.classList.add("ok");
+    }else{
+      ta.disabled = false;
+      saveBtn.classList.remove("hidden");
+      editBtn.classList.add("hidden");
+      status.textContent = "Bekliyor";
+    }
+  }
+
+  function saveReading(n){
+    const ta = document.getElementById("r"+n);
+    const answer = ta.value.trim();
+    if(!answer){
+      ta.focus();
+      return;
+    }
+    state.reading[n] = {answer, completed:true};
+    save();
+    setReadingUI(n);
+  }
+
+  function editReading(n){
+    const old = state.reading[n] || {};
+    state.reading[n] = {answer:old.answer || "", completed:false};
+    save();
+    setReadingUI(n);
+    setTimeout(()=>document.getElementById("r"+n).focus(), 0);
+  }
+
+  function updateScore(){
+    let done=0, correct=0;
+    for(let i=1;i<=8;i++){
+      const item = state.grammar[i];
+      if(item && item.completed){
+        done++;
+        if(item.correct) correct++;
+      }
+    }
+    document.getElementById("score").textContent =
+      done ? `Grammar: ${correct} doğru / ${done} tamamlanan soru` : "";
+  }
+
+  function collectResults(){
+    let out = "DAY 1 REPEAT RESULTS\n\nGRAMMAR\n";
+    for(let i=1;i<=8;i++){
+      const item = state.grammar[i];
+      if(item && item.completed){
+        out += `${i}- ${item.answer} ${item.correct ? "✓" : "✗"}\n`;
+      }
+    }
+    out += "\nREADING\n";
+    for(let i=1;i<=6;i++){
+      const item = state.reading[i];
+      if(item && item.completed){
+        out += `${i}- ${item.answer}\n`;
+      }
+    }
+    return out;
+  }
+
+  async function copyResults(){
+    const text = collectResults();
+    const msg = document.getElementById("copymsg");
+    if(!text.includes("- ")){
+      msg.textContent = "Henüz tamamlanmış cevap yok.";
+      msg.className = "feedback badtext";
+      return;
+    }
+    try{
+      await navigator.clipboard.writeText(text);
+      msg.textContent = "✓ Kopyalandı. ChatGPT'ye yapıştırabilirsin.";
+      msg.className = "feedback oktext";
+    }catch(e){
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand("copy");
+      ta.remove();
+      msg.textContent = "✓ Kopyalandı. ChatGPT'ye yapıştırabilirsin.";
+      msg.className = "feedback oktext";
+    }
+  }
+
+  function resetAll(){
+    if(!confirm("Tüm kayıtlı cevaplar ve tamamlanma durumları silinsin mi?")) return;
+    state.grammar = {};
+    state.reading = {};
+    if(storageOK) localStorage.removeItem(KEY);
+    for(let i=1;i<=8;i++) setGrammarUI(i);
+    for(let i=1;i<=6;i++) setReadingUI(i);
+    updateScore();
+    document.getElementById("copymsg").textContent = "";
+  }
+
+  document.querySelectorAll(".check-grammar").forEach(btn=>{
+    btn.addEventListener("click", ()=>checkGrammar(Number(btn.dataset.n)));
+  });
+  document.querySelectorAll(".edit-grammar").forEach(btn=>{
+    btn.addEventListener("click", ()=>editGrammar(Number(btn.dataset.n)));
+  });
+  document.querySelectorAll(".save-reading").forEach(btn=>{
+    btn.addEventListener("click", ()=>saveReading(Number(btn.dataset.n)));
+  });
+  document.querySelectorAll(".edit-reading").forEach(btn=>{
+    btn.addEventListener("click", ()=>editReading(Number(btn.dataset.n)));
+  });
+  document.getElementById("copyBtn").addEventListener("click", copyResults);
+  document.getElementById("resetBtn").addEventListener("click", resetAll);
+
+  for(let i=1;i<=8;i++){
+    document.getElementById("g"+i).addEventListener("input", e=>{
+      const old = state.grammar[i] || {};
+      if(!old.completed){
+        state.grammar[i] = {answer:e.target.value, completed:false, correct:null};
+        save();
+      }
+    });
+  }
+  for(let i=1;i<=6;i++){
+    document.getElementById("r"+i).addEventListener("input", e=>{
+      const old = state.reading[i] || {};
+      if(!old.completed){
+        state.reading[i] = {answer:e.target.value, completed:false};
+        save();
+      }
+    });
+  }
+
+  load();
+  for(let i=1;i<=8;i++) setGrammarUI(i);
+  for(let i=1;i<=6;i++) setReadingUI(i);
+  updateScore();
+})();
+</script>
+</body>
+</html>
